@@ -1,0 +1,22 @@
+<head>
+  <title>genny</title>
+</head>
+
+<body>
+  {{> loginButtons}}
+  {{> genny}}
+</body>
+
+<template name="genny">
+  <h1>It's Genny Time!</h1>
+  <input type="button" value="Click" />
+    {{#each people}}
+      {{> person }}
+    {{/each}}
+</template>
+
+<template name="person">
+  <div class="person">
+    <a href="">{{name}}</a>
+  </div>
+</template>
