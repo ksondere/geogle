@@ -1,0 +1,30 @@
+<head>
+  <title>genny</title>
+</head>
+
+<body>
+  {{> loginButtons}}
+  {{> genny}}
+</body>
+
+<template name="genny">
+  <h1>It's Genny Time!</h1>
+  <input type="button" value="Click to login" />
+    {{#each people}}
+      {{> person }}
+    {{/each}}
+</template>
+
+<template name="person">
+  <div class="person">
+    <a id={{id}} href="">{{name}}</a>
+      <div class="details">
+          gender: {{gender}}
+          life span: {{lifespan}}
+          birth date: {{birthDate}}
+          birth place: {{birthPlace}}
+          death date: {{deathDate}}
+          death place: {{deathPlace}}
+      </div>
+  </div>
+</template>
