@@ -1,4 +1,6 @@
-genny
+geneoogle
 ========
 
-Experimenting with kinpoint ideas on meteor
+Experimenting with geneology ideas on meteor
+
+
