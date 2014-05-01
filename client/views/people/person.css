@@ -1,0 +1,7 @@
+/* CSS declarations go here */
+.person {
+    padding: 10px;
+    border: 1px solid #888;
+    background: #efefef;
+    margin: 10px 30px 10px 30px;
+}

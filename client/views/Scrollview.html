@@ -1,0 +1,107 @@
+<template name="Scrollview">
+    {{#famous view='Scrollview' size="undefined,undefined" items=items}}
+
+    {{#famous view='Surface' size="undefined,80" class="margin10"}}
+    <h3>Scrollview Demo</h3>
+
+    <p>Scroll to bottom to see source</p>
+    {{/famous}}
+
+    {{#famousEach data=../items size="undefined,50"}}
+    <div class="person">
+        <a id={{id}} href="">{{name}}</a>
+        <div class="details">
+            gender: {{gender}}
+            life span: {{lifespan}}
+            birth date: {{birthDate}}
+            birth place: {{birthPlace}}
+            death date: {{deathDate}}
+            death place: {{deathPlace}}
+        </div>
+    </div>
+    {{/famousEach}}
+
+    {{>famous template='Scrollview_source' size="undefined,410"}}
+    {{/famous}}
+</template>
+
+<template name="Scrollview_source">
+    <div class="code">
+        {{#sh_highlight lang="html"}}
+        {{dstache}}#famous view='Scrollview' size="undefined,undefined" items=items}}
+
+        {{dstache}}famous view='Surface' size="undefined,50"}}
+        Surface above the list (source code at bottom)
+        {{dstache}}/famous}}
+
+        {{dstache}}#famousEach data=../items size="undefined,100"}}
+        <div class="person">
+            <a id={{id}} href="">{{name}}</a>
+            <div class="details">
+                gender: {{gender}}
+                life span: {{lifespan}}
+                birth date: {{birthDate}}
+                birth place: {{birthPlace}}
+                death date: {{deathDate}}
+                death place: {{deathPlace}}
+            </div>
+        </div>
+
+        {{dstache}}/famousEach}}
+
+        {{dstache}}>famous template='Scrollview_source'}}
+
+        {{dstache}}/famous}}
+        {{/sh_highlight}}
+    </div>
+
+    <div class="code" style="margin-top: 10px">
+        {{#sh_highlight lang="js"}}
+        Template.Scrollview.items = Template.list.items = function() {
+        return Items.find();
+        }
+        {{/sh_highlight}}
+    </div>
+</template>
+
+<!-- alternatively could be done like below -->
+
+<!-- router page -->
+<template name="_Scrollview">
+    {{>famous template='list' view='Scrollview' size="undefined,undefined"}}
+</template>
+
+<!-- will be loaded as a Scrollview -->
+<template name="list" view="Scrollview (requires PR)">
+    {{>famousEach data=items template='listItem' size='undefined,100'}}
+</template>
+
+<!-- used to generate surfaces, passed to Scrollview.sequenceFrom -->
+<template name="listItem">
+    <div class="listItem">{{name}}</div>
+</template>
+
+
+<template name="layouts">
+    {{#famous view='Scrollview' size="undefined,undefined" items=items}}
+
+    {{famous view='Surface' size="undefined,50"}}
+    Surface above the list (source code at bottom)
+    {{/famous}}
+
+    {{#famousEach data=../items size="undefined,100"}}
+    <div class="person">
+        <a id={{id}} href="">{{name}}</a>
+        <div class="details">
+            gender: {{gender}}
+            life span: {{lifespan}}
+            birth date: {{birthDate}}
+            birth place: {{birthPlace}}
+            death date: {{deathDate}}
+            death place: {{deathPlace}}
+        </div>
+    </div>
+    {{/famousEach}}
+
+
+</template>

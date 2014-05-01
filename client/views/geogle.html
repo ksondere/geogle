@@ -2,29 +2,5 @@
   <title>geogle</title>
 </head>
 
-<body>
-  {{> loginButtons}}
-  {{> geogle}}
-</body>
 
-<template name="geogle">
-  <h1>Geogle</h1>
-  <input type="button" value="Click to build your geneology" />
-    {{#each people}}
-      {{> person }}
-    {{/each}}
-</template>
 
-<template name="person">
-  <div class="person">
-    <a id={{id}} href="">{{name}}</a>
-      <div class="details">
-          gender: {{gender}}
-          life span: {{lifespan}}
-          birth date: {{birthDate}}
-          birth place: {{birthPlace}}
-          death date: {{deathDate}}
-          death place: {{deathPlace}}
-      </div>
-  </div>
-</template>

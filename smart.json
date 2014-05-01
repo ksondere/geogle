@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "bootstrap-3": {},
+    "iron-router": {},
+    "font-awesome": {},
+    "bootstrap-flatly": {},
+    "accounts-ui-bootstrap-3": {},
+    "spin": {}
+  }
+}
